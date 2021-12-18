@@ -13,6 +13,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->morphs('commentable');
             $table->foreignId('parent_id')->nullable()->constrained('comments')->onDelete('cascade');
+            $table->longText('original_text');
             $table->longText('text');
             $table->json('extra')->nullable();
             $table->timestamps();

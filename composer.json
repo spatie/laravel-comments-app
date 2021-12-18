@@ -2,12 +2,20 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
-    "repositories": [{
-        "type": "path",
-        "url": "../laravel-comments"
-    }
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-comments"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-comments-livewire"
+        }
     ],
     "require": {
         "php": "^8.1",
@@ -17,7 +25,9 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.8",
+        "spatie/laravel-comments-livewire": "dev-main",
         "spatie/laravel-comments": "dev-main",
+        "spatie/laravel-markdown": "^2.1",
         "spatie/laravel-ray": "^1.26"
     },
     "require-dev": {
