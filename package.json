@@ -16,7 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "@tiptap/starter-kit": "^2.0.0-beta.163",
-        "shiki": "^0.9.15"
+        "shiki": "^0.9.15",
+        "simplemde": "^1.11.2"
     }
 }

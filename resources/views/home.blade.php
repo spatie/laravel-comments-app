@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Test app</title>
-        <script src="{{ mix('js/app.js') }}" defer="defer"></script>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
         @livewireStyles
     </head>
@@ -17,5 +17,29 @@
         </div>
 
         @livewireScripts
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('compose', () => ({
+                    init() {
+                        const editor = new SimpleMDE({
+                            element: this.$refs.editor,
+                            hideIcons: ['heading', 'image', 'preview', 'side-by-side', 'fullscreen', 'guide'],
+                            spellChecker: false,
+                            status: false,
+                        });
+
+                        editor.codemirror.on('change', () => {
+                            this.$refs.input.value = editor.value();
+                            this.$refs.input.dispatchEvent(new InputEvent('input'));
+                        });
+
+                        this.$wire.on('submit', () => {
+                            editor.value('');
+                        });
+                    },
+                }));
+            });
+        </script>
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </body>
 </html>
