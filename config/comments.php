@@ -9,10 +9,11 @@ return [
     'allowed_reactions' => ['👍', '🥳', '👀', '😍', '💅'],
 
     /*
-     * A comment processor is a class that will transform the comment text
+     * A comment transformer is a class that will transform the comment text
+     * for example from Markdown to HTML
      */
-    'comment_processors' => [
-         Spatie\Comments\CommentProcessors\MarkdownToHtmlProcessor::class,
+    'comment_transformers' => [
+        Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer::class,
     ],
 
     'models' => [
@@ -37,6 +38,13 @@ return [
     ],
 
     'actions' => [
+        /*
+         * This class is responsible for storing the input of the user as a comment.
+         *
+         * Unless you need fine-grained customisation, you don't need to change
+         * this class. If you do change it, make sure that your class
+         * extends `Spatie\Comments\Actions\ProcessCommentAction`.
+         */
         'process_comment' => Spatie\Comments\Actions\ProcessCommentAction::class,
     ],
 ];
