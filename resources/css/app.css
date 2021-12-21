@@ -19,11 +19,6 @@
     display: block;
 }
 
-.toplevel-markdown code{
-    background-color: #FFF;
-    border-radius: 0.375rem;
-}
-
 .markdown ol{
     list-style-type:decimal;
     padding-left: 2rem;
