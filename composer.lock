@@ -3099,7 +3099,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-comments",
-                "reference": "52604059ee792401d02fbc59031cc58a9ffdc07b"
+                "reference": "60fc2212003969f2567abb9da543f22a9c24b1ea"
             },
             "require": {
                 "illuminate/contracts": "^8.73",
@@ -3183,7 +3183,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-comments-livewire",
-                "reference": "8c272d4b7d313a82b946a7915acbc2ed67c9d6a5"
+                "reference": "568c20e98d7102fe57bfd2fae76f97200201e75c"
             },
             "require": {
                 "illuminate/contracts": "^8.73",
