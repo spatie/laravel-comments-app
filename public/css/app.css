@@ -12,12 +12,18 @@
 }
 
 .markdown code{
-    padding:  0.5rem 1rem;
+    padding:  0.2rem 0.5rem;
     margin: 1rem 0;
     background-color: #f3f4f6;
     border-radius: 0.375rem;
+    display: inline;
+}
+
+.markdown .shiki code{
+    padding:  0.5rem 1rem;
     display: block;
 }
+
 
 .markdown ol{
     list-style-type:decimal;
