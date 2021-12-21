@@ -2,6 +2,10 @@
     
 }
 
+[x-cloak] { 
+    display: none !important;
+ }
+
 
 
 .markdown h2{
