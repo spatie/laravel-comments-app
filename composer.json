@@ -63,6 +63,12 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "pull": [
+            "cd ../laravel-comments;git pull origin main",
+            "cd ../laravel-comments-livewire;git pull origin main",
+            "git pull origin main"
+
         ]
     },
     "extra": {
