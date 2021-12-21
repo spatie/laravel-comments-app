@@ -6,6 +6,7 @@
         <title>Test app</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        <link rel="stylesheet" href="./css/app.css">
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
         @livewireStyles
@@ -13,7 +14,7 @@
     <body>
         <div class="container m-4">
             <h1>{{ $post->title }}</h1>
-            <livewire:comments :model="$post" />
+            <livewire:comments :model="$post" :primaryColor="'purple-500'" />
         </div>
 
         @livewireScripts
