@@ -3100,7 +3100,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-comments",
-                "reference": "a0fcf3a1054d4cc37bdd1b4a28ed7703fe8734dc"
+                "reference": "ea778deca45f0cb2da2c0170df0a406303c1aedc"
             },
             "require": {
                 "illuminate/contracts": "^8.73",
