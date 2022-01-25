@@ -26,5 +26,11 @@ return new class extends Migration
             $table->string('reaction')->collation('utf8mb4_bin');
             $table->timestamps();
         });
+
+        Schema::create('comment_notification_opt_outs', function(Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->morphs('commentable', 'opt_outs');
+            $table->timestamps();
+        });
     }
 };
