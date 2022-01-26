@@ -12,4 +12,14 @@ class Post extends Model
     use HasComments;
 
     public $guarded = [];
+
+    public function commentableName(): string
+    {
+        return $this->name;
+    }
+
+    public function commentUrl(): string
+    {
+        return 'myUrl';
+    }
 }

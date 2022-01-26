@@ -1,6 +1,8 @@
 <?php
 
 
+use Spatie\Comments\Notifications\NewCommentNotification;
+
 return [
     /*
      * These are the reactions that can be made on a comment. We highly recommend
@@ -13,7 +15,7 @@ return [
      * for example from Markdown to HTML
      */
     'comment_transformers' => [
-        Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer::class,
+        // Spatie\Comments\CommentProcessors\MarkdownToHtmlProcessor::class,
     ],
 
     'models' => [
@@ -30,11 +32,31 @@ return [
         'reaction' => Spatie\Comments\Models\Reaction::class,
 
         /*
-         *  The user model that will be associated with the comments.
-         *
-         *  When this is set to null, we'll use the default user model.
+         * The model you want to use as an opt-out model. It needs to be or
+         * extend the `Spatie\Comments\Models\CommentNotificationOptOut::class` model.
          */
-        'user' => null,
+        'comment_notification_opt_out' => Spatie\Comments\Models\CommentNotificationOptOut::class,
+
+        /*
+         * The class that will comment on other things. Typically, this
+         * would be a user model.
+         */
+        'commentator' => null,
+    ],
+
+    'notifications' => [
+        'enabled' => true,
+
+        'notifications' => [
+            'new_comment' => NewCommentNotification::class,
+        ],
+
+        'mail' => [
+            'from' => [
+                'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+                'name' => env('MAIL_FROM_NAME', 'Example'),
+            ],
+        ],
     ],
 
     'actions' => [
@@ -46,5 +68,10 @@ return [
          * extends `Spatie\Comments\Actions\ProcessCommentAction`.
          */
         'process_comment' => Spatie\Comments\Actions\ProcessCommentAction::class,
+
+        /*
+         * This class is responsible for send out notifications for new comments.
+         */
+        'send_notifications_for_new_comment' => Spatie\Comments\Actions\SendNotificationsForNewCommentAction::class,
     ],
 ];

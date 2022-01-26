@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->morphs('commentator');
             $table->morphs('commentable');
             $table->foreignId('parent_id')->nullable()->constrained('comments')->onDelete('cascade');
             $table->longText('original_text');
@@ -21,14 +21,14 @@ return new class extends Migration
 
         Schema::create('reactions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->morphs('commentator');
             $table->foreignId('comment_id')->references('id')->on('comments')->cascadeOnDelete();
             $table->string('reaction')->collation('utf8mb4_bin');
             $table->timestamps();
         });
 
         Schema::create('comment_notification_opt_outs', function(Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->morphs('commentator', 'commentator_opt_outs');
             $table->morphs('commentable', 'opt_outs');
             $table->timestamps();
         });
