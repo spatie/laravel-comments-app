@@ -15,7 +15,7 @@ return [
      * for example from Markdown to HTML
      */
     'comment_transformers' => [
-        // Spatie\Comments\CommentProcessors\MarkdownToHtmlProcessor::class,
+        Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer::class,
     ],
 
     'models' => [
