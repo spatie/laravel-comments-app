@@ -1,12 +1,10 @@
 .markdown  * {
-    
+
 }
 
-[x-cloak] { 
+[x-cloak] {
     display: none !important;
  }
-
-
 
 .markdown h2{
  font-size: 2rem;
@@ -43,3 +41,4 @@
     color: #666666;
     text-decoration: underline;
 }
+
