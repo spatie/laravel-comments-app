@@ -1,6 +1,5 @@
 <?php
 
-
 use Spatie\Comments\Notifications\NewCommentNotification;
 
 return [
