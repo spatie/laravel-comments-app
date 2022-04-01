@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
 {
-
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {

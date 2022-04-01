@@ -8,14 +8,13 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-
     public function run()
     {
         Post::create(['title' => 'dummy post']);
         User::create([
             'name' => 'John Doe',
             'email' => 'john@example.com',
-            'password'=> bcrypt('secret')
+            'password'=> bcrypt('secret'),
         ]);
     }
 }
