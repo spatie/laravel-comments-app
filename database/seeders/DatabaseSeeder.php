@@ -12,8 +12,8 @@ class DatabaseSeeder extends Seeder
     {
         Post::create(['title' => 'dummy post']);
         User::create([
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
+            'name' => 'Freek',
+            'email' => 'freek@spatie.be',
             'password'=> bcrypt('secret'),
         ]);
     }
