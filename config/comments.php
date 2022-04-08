@@ -7,10 +7,10 @@ use Spatie\Comments\Actions\RejectCommentAction;
 use Spatie\Comments\Actions\ApproveCommentAction;
 use Spatie\Comments\Actions\SendNotificationsForPendingCommentAction;
 use Spatie\Comments\Actions\ProcessCommentAction;
-use Spatie\Comments\Models\CommentNotificationOptOut;
 use Spatie\Comments\Models\Reaction;
 use Spatie\Comments\Models\Comment;
 use Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer;
+use Spatie\Comments\Models\CommentNotificationSubscription;
 
 return [
     /*
@@ -33,7 +33,7 @@ return [
      * Comments need to be approved before they are shown. You can opt
      * to have all comments to be approved automatically.
      */
-    'automatically_approve_all_comments' => false,
+    'automatically_approve_all_comments' => true,
 
     'models' => [
         /*
@@ -56,9 +56,9 @@ return [
 
         /*
          * The model you want to use as an opt-out model. It needs to be or
-         * extend the `Spatie\Comments\Models\CommentNotificationOptOut::class` model.
+         * extend the `Spatie\Comments\Models\CommentNotificationSubscription::class` model.
          */
-        'comment_notification_opt_out' => CommentNotificationOptOut::class,
+        'comment_notification_subscription' => CommentNotificationSubscription::class,
     ],
 
     'notifications' => [
