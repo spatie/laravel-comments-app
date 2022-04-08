@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6287c5a3a21cfa54335a356ae8362485",
+    "content-hash": "85796b1130f3fd9ec8ab44056c8bec20",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1212,6 +1212,83 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2022-04-05T15:07:51+00:00"
+        },
+        {
+            "name": "laravel/horizon",
+            "version": "v5.9.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/horizon.git",
+                "reference": "9dfcc748ce30a5b97c538b7884f5b4afb75e1973"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/9dfcc748ce30a5b97c538b7884f5b4afb75e1973",
+                "reference": "9dfcc748ce30a5b97c538b7884f5b4afb75e1973",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-pcntl": "*",
+                "ext-posix": "*",
+                "illuminate/contracts": "^8.17|^9.0",
+                "illuminate/queue": "^8.17|^9.0",
+                "illuminate/support": "^8.17|^9.0",
+                "nesbot/carbon": "^2.17",
+                "php": "^7.3|^8.0",
+                "ramsey/uuid": "^4.0",
+                "symfony/error-handler": "^5.0|^6.0",
+                "symfony/process": "^5.0|^6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0",
+                "phpunit/phpunit": "^9.0",
+                "predis/predis": "^1.1"
+            },
+            "suggest": {
+                "ext-redis": "Required to use the Redis PHP driver.",
+                "predis/predis": "Required when not using the Redis PHP driver (^1.1)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Horizon\\HorizonServiceProvider"
+                    ],
+                    "aliases": {
+                        "Horizon": "Laravel\\Horizon\\Horizon"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Horizon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Dashboard and code-driven configuration for Laravel queues.",
+            "keywords": [
+                "laravel",
+                "queue"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/horizon/issues",
+                "source": "https://github.com/laravel/horizon/tree/v5.9.6"
+            },
+            "time": "2022-04-07T08:34:46+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -3236,7 +3313,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-comments",
-                "reference": "6856ddb825258024befb0606134d59b41368d432"
+                "reference": "cc0c20443c1fd23574953e53c0db16e224349428"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -3321,7 +3398,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-comments-livewire",
-                "reference": "f72a01d747b5fa41d1187298771c8ed26c0262a7"
+                "reference": "5f6ace133e3717dbae2b3a495bd83ab0ed93ba84"
             },
             "require": {
                 "illuminate/contracts": "^9.0",
@@ -9158,8 +9235,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/laravel-comments-livewire": 20,
-        "spatie/laravel-comments": 20
+        "spatie/laravel-comments": 20,
+        "spatie/laravel-comments-livewire": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
