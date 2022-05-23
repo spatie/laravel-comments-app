@@ -14,9 +14,9 @@
 <div class="flex m-4 justify-evenly">
     <div>
         Login as:
-        <a class="underline" href="/login/freek">Freek</a>
-        <a class="underline" href="/login/sebastian">Seb</a>
-        <a class="underline" href="/login/vic">Vic</a>
+        <a class="underline" href="/login/freek">Admin</a>
+        <a class="underline" href="/login/sebastian">User 1</a>
+        <a class="underline" href="/login/willem">User 2</a>
     </div>
     <div>
         @auth

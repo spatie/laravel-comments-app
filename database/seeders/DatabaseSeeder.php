@@ -13,20 +13,20 @@ class DatabaseSeeder extends Seeder
         Post::create(['title' => 'dummy post']);
 
         User::create([
-            'name' => 'Freek',
+            'name' => 'Admin',
             'email' => 'freek@spatie.be',
             'password'=> bcrypt('secret'),
         ]);
 
         User::create([
-            'name' => 'Seb',
+            'name' => 'User 1',
             'email' => 'sebastian@spatie.be',
             'password'=> bcrypt('secret'),
         ]);
 
         User::create([
-            'name' => 'vic',
-            'email' => 'vic@spatie.be',
+            'name' => 'User 2',
+            'email' => 'willem@spatie.be',
             'password'=> bcrypt('secret'),
         ]);
     }

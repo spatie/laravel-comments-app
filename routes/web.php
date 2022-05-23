@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 
+Route::comments();
+
 Route::get('/login/{name}', function(string $name) {
     $user = User::query()->where('email', "{$name}@spatie.be")->first();
 
