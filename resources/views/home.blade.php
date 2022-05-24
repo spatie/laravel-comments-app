@@ -36,7 +36,18 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <livewire:comments :model="$post"/>
+
+    @auth
+        <livewire:comments :model="$post"/>
+    @endauth
+
+    @guest
+        <livewire:comments read-only :model="$post"/>
+
+        <p class="comments-no-comment-yet">
+            Log in to make a comment...
+        </p>
+    @endguest
 </div>
 
 @livewireScripts
