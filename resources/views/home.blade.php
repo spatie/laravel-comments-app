@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Test app</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/app.css">
+
+    @vite(['resources/css/app.css'])
 
     @livewireStyles
     <x-comments::styles/>
