@@ -1,5 +1,6 @@
 <?php
 
+use Spatie\Comments\CommentTransformers\SmartMentionsTransformer;
 use Spatie\Comments\Notifications\ApprovedCommentNotification;
 use Spatie\Comments\Notifications\PendingCommentNotification;
 use Spatie\Comments\Actions\SendNotificationsForApprovedCommentAction;
@@ -11,7 +12,7 @@ use Spatie\Comments\Models\Reaction;
 use Spatie\Comments\Models\Comment;
 use Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer;
 use Spatie\Comments\Models\CommentNotificationSubscription;
-use Spatie\LivewireComments\CommentTransformers\SmartMentionsTransformer;
+use Spatie\LivewireComments\Resolvers\MentionAutocompleteResolver;
 
 return [
     /*
@@ -102,5 +103,6 @@ return [
     'mentions' => [
         'enabled' => true,
         'show_avatars_in_autocomplete' => true,
+        'autocomplete_resolver' => MentionAutocompleteResolver::class,
     ]
 ];
