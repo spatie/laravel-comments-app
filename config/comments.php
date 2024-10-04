@@ -1,5 +1,6 @@
 <?php
 
+use Spatie\Comments\CommentTransformers\SmartMentionsTransformer;
 use Spatie\Comments\Notifications\ApprovedCommentNotification;
 use Spatie\Comments\Notifications\PendingCommentNotification;
 use Spatie\Comments\Actions\SendNotificationsForApprovedCommentAction;
@@ -11,6 +12,7 @@ use Spatie\Comments\Models\Reaction;
 use Spatie\Comments\Models\Comment;
 use Spatie\Comments\CommentTransformers\MarkdownToHtmlTransformer;
 use Spatie\Comments\Models\CommentNotificationSubscription;
+use Spatie\LivewireComments\Resolvers\MentionAutocompleteResolver;
 
 return [
     /*
@@ -27,20 +29,21 @@ return [
      */
     'comment_transformers' => [
         MarkdownToHtmlTransformer::class,
+        SmartMentionsTransformer::class,
     ],
 
     /*
      * Comments need to be approved before they are shown. You can opt
      * to have all comments to be approved automatically.
      */
-    'automatically_approve_all_comments' => false,
+    'automatically_approve_all_comments' => true,
 
     'models' => [
         /*
          * The class that will comment on other things. Typically, this
          * would be a user model.
          */
-        'commentator' => null,
+        'commentator' => \App\Models\User::class,
 
         /*
          * The model you want to use as a Comment model. It needs to be or
@@ -96,4 +99,10 @@ return [
         'reject_comment' => RejectCommentAction::class,
         'send_notifications_for_approved_comment' => SendNotificationsForApprovedCommentAction::class,
     ],
+
+    'mentions' => [
+        'enabled' => true,
+        'show_avatars_in_autocomplete' => true,
+        'autocomplete_resolver' => MentionAutocompleteResolver::class,
+    ]
 ];

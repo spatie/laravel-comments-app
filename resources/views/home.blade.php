@@ -9,7 +9,10 @@
     @vite(['resources/css/app.css'])
 
     @livewireStyles
-    <x-comments::styles/>
+
+    @laravelCommentsLivewireStyles
+
+    @laravelCommentsLivewireScripts
 </head>
 <body>
 <div class="flex m-4 justify-evenly">
